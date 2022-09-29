@@ -1,8 +1,6 @@
 local status, catppuccin = pcall(require, 'catppuccin')
 
-if not status then
-  return
-end
+if not status then return end
 
 -- bringing in all palettes, commenting out ones that we currently aren't using
 -- no need to pcall since we already check status earlier
