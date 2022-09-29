@@ -1,2 +1,1 @@
-require("kylemckell")
-
+require('kylemckell')

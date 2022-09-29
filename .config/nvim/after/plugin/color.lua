@@ -1,4 +1,4 @@
-local status, catppuccin = pcall(require, "catppuccin")
+local status, catppuccin = pcall(require, 'catppuccin')
 
 if not status then
   return
@@ -6,32 +6,32 @@ end
 
 -- bringing in all palettes, commenting out ones that we currently aren't using
 -- no need to pcall since we already check status earlier
-local palletes = require("catppuccin.palettes")
-local mocha = palletes.get_palette("mocha")
+local palletes = require('catppuccin.palettes')
+local mocha = palletes.get_palette('mocha')
 -- local macchiato = palletes.get_palette "macchiato"
 -- local frappe = palletes.get_palette "frappe"
 -- local latte = palletes.get_palette "latte"
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
 
 catppuccin.setup({
   transparent_background = true,
   term_colors = true,
   compile = {
     enabled = false,
-    path = vim.fn.stdpath("cache") .. "/catppuccin",
+    path = vim.fn.stdpath('cache') .. '/catppuccin',
   },
   dim_inactive = {
     enabled = false,
-    shade = "dark",
+    shade = 'dark',
     percentage = 0.15,
   },
   styles = {
-    comments = { "italic" },
-    conditionals = { "italic" },
+    comments = { 'italic' },
+    conditionals = { 'italic' },
     loops = {},
     functions = {},
-    keywords = { "italic" },
+    keywords = { 'italic' },
     strings = {},
     variables = {},
     numbers = {},

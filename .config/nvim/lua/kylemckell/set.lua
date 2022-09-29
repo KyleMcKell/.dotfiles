@@ -14,4 +14,4 @@ vim.opt.incsearch = true
 
 vim.opt.wrap = false
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
