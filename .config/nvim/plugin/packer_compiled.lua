@@ -99,6 +99,16 @@ _G.packer_plugins = {
     path = "/home/kyle/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["git.nvim"] = {
+    loaded = true,
+    path = "/home/kyle/.local/share/nvim/site/pack/packer/start/git.nvim",
+    url = "https://github.com/dinhhuy258/git.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/kyle/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/kyle/.local/share/nvim/site/pack/packer/start/lspkind-nvim",

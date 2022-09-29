@@ -1,10 +1,12 @@
 local status, cmp = pcall(require, 'cmp')
-if not status then return end
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
+
+if not status then return end
 
 cmp.setup({
   snippet = {
-    expand = function(args) require('luasnip').lsp_expand(args.body) end,
+    expand = function(args) luasnip.lsp_expand(args.body) end,
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-k>'] = cmp.mapping.select_prev_item(),

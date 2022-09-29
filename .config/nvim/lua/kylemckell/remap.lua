@@ -35,9 +35,16 @@ nnoremap('<leader>cd', '<cmd>Lspsaga show_cursor_diagnostics<CR>')
 nnoremap('<C-j>', '<cmd>Lspsaga diagnostic_jump_next<CR>')
 nnoremap('<C-k>', '<cmd>Lspsaga diagnostic_jump_prev<CR>')
 nnoremap('K', '<cmd>Lspsaga hover_doc<CR>')
+nnoremap('<leader>ca', '<cmd>Lspsaga code_action<CR>')
 nnoremap('D', '<cmd>Lspsaga peek_definition<CR>')
 nnoremap('<leader>rn', '<cmd>Lspsaga rename<CR>')
 
 -- float terminal
 nnoremap('<C-a>', '<cmd>Lspsaga open_floaterm<CR>')
 tnoremap('<C-a>', '<cmd>Lspsaga close_floaterm<CR>')
+
+-- get rid of highlight
+nnoremap('<leader>noh', '<Esc>:noh<CR>')
+
+-- git
+nnoremap('<leader>gb', '<cmd>GitBlame<CR>')
