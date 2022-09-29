@@ -74,17 +74,17 @@ nulls.setup({
   sources = {
     nulls.builtins.formatting.prettierd.with({
       filetypes = {
-        'css',
-        'graphql',
-        'html',
+        'typescript',
+        'typescriptreact',
         'javascript',
         'javascriptreact',
         'json',
-        'less',
         'markdown',
+        'css',
+        'html',
+        'graphql',
+        'less',
         'scss',
-        'typescript',
-        'typescriptreact',
         'yaml',
       },
     }),
