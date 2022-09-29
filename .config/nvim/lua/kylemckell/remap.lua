@@ -30,14 +30,14 @@ tnoremap('<Esc>', '<C-\\><C-n>') -- remap Esc to go to normal mode in terminal
 tnoremap('<leader><Esc>', '<C-\\><C-n><cmd>q<CR>') -- remap Esc to go to normal mode in terminal
 
 -- lsp saga
-nnoremap('<leader>ld', '<cmd>Lspsaga show_line_diagnostics<CR>', { silent = true })
-nnoremap('<leader>cd', '<cmd>Lspsaga show_cursor_diagnostics<CR>', { silent = true })
-nnoremap('<C-]>', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
-nnoremap('<C-[>', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
+nnoremap('<leader>ld', '<cmd>Lspsaga show_line_diagnostics<CR>')
+nnoremap('<leader>cd', '<cmd>Lspsaga show_cursor_diagnostics<CR>')
+nnoremap('<C-j>', '<cmd>Lspsaga diagnostic_jump_next<CR>')
+nnoremap('<C-k>', '<cmd>Lspsaga diagnostic_jump_prev<CR>')
 nnoremap('K', '<cmd>Lspsaga hover_doc<CR>')
 nnoremap('D', '<cmd>Lspsaga peek_definition<CR>')
-nnoremap('<leader>rn', '<cmd>Lspsaga rename<CR>', { silent = true })
+nnoremap('<leader>rn', '<cmd>Lspsaga rename<CR>')
 
 -- float terminal
-nnoremap('<C-a>', '<cmd>Lspsaga open_floaterm<CR>', { silent = true })
-tnoremap('<C-a>', '<cmd>Lspsaga close_floaterm<CR>', { silent = true })
+nnoremap('<C-a>', '<cmd>Lspsaga open_floaterm<CR>')
+tnoremap('<C-a>', '<cmd>Lspsaga close_floaterm<CR>')
