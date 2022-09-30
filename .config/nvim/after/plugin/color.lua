@@ -38,7 +38,10 @@ catppuccin.setup({
     operators = {},
   },
   integrations = {
-    -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+    treesitter = true,
+    cmp = true,
+    gitsigns = true,
+    telescope = true,
   },
   color_overrides = {},
   highlight_overrides = {

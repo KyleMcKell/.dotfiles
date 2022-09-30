@@ -25,9 +25,9 @@ vnoremap('<leader>p', '"+p')
 vnoremap('<leader>P', '"+P')
 
 -- terminal remaps
-nnoremap('<leader>cmd', '<cmd>vnew<CR><cmd>:terminal<CR>i') -- open terminal in vnew
+-- nnoremap('<leader>cmd', '<cmd>vnew<CR><cmd>:terminal<CR>i') -- open terminal in vnew
 tnoremap('<Esc>', '<C-\\><C-n>') -- remap Esc to go to normal mode in terminal
-tnoremap('<leader><Esc>', '<C-\\><C-n><cmd>q<CR>') -- remap Esc to go to normal mode in terminal
+-- tnoremap('<leader><Esc>', '<C-\\><C-n><cmd>q<CR>') -- remap Esc to go to normal mode in terminal
 
 -- lsp saga
 nnoremap('<leader>ld', '<cmd>Lspsaga show_line_diagnostics<CR>')
@@ -48,3 +48,5 @@ nnoremap('<leader>noh', '<Esc>:noh<CR>')
 
 -- git
 nnoremap('<leader>gb', '<cmd>GitBlame<CR>')
+nnoremap('<leader>gR', '<cmd>GitRevert<CR>')
+nnoremap('<leader>gr', '<cmd>GitRevertFile<CR>')

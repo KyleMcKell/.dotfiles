@@ -4,7 +4,7 @@ local masonnulls = require('mason-null-ls')
 local masontools = require('mason-tool-installer')
 
 local servers = { 'sumneko_lua', 'tsserver', 'gopls', 'pyright', 'rust_analyzer', 'tailwindcss' }
-local nulltools = { 'stylua', 'eslint_d', 'jq' }
+local nulltools = { 'stylua', 'jq', 'eslint_d' }
 local tools = { 'prettierd' }
 
 mason.setup({
