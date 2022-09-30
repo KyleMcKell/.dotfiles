@@ -89,6 +89,9 @@ nulls.setup({
         'yaml',
       },
     }),
+    -- nulls.builtins.diagnostics.eslint.with({
+    --   diagnostics_format = '[eslint] #{m}\n(#{c})',
+    -- }),
   },
 })
 
