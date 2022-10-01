@@ -55,5 +55,6 @@ nnoremap('<leader>gr', '<cmd>GitRevertFile<CR>')
 -- nvim tree garbage
 nnoremap('<leader>tt', '<cmd>NvimTreeToggle<CR>')
 nnoremap('<leader>to', '<cmd>NvimTreeFocus<CR>')
-nnoremap('<leader>tf', '<cmd>NvimTreeFindFile<cr>')
-nnoremap('<leader>tc', '<cmd>NvimTreeCollapse<cr>')
+nnoremap('<leader>tf', '<cmd>NvimTreeFindFile<CR>')
+nnoremap('<leader>tc', '<cmd>NvimTreeCollapse<CR>')
+nnoremap('<leader>tr', '<cmd>NvimTreeRefresh<CR>')
