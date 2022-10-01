@@ -1,11 +1,9 @@
 local mason = require('mason')
 local masonlsp = require('mason-lspconfig')
 local masonnulls = require('mason-null-ls')
-local masontools = require('mason-tool-installer')
 
 local servers = { 'sumneko_lua', 'tsserver', 'gopls', 'pyright', 'rust_analyzer', 'tailwindcss' }
-local nulltools = { 'stylua', 'jq', 'eslint_d' }
-local tools = { 'prettierd' }
+local nulltools = { 'stylua', 'jq', 'eslint_d', 'prettierd' }
 
 mason.setup({
   ui = {
@@ -23,8 +21,4 @@ masonlsp.setup({
 
 masonnulls.setup({
   ensure_installed = nulltools,
-})
-
-masontools.setup({
-  ensure_installed = tools,
 })

@@ -23,6 +23,9 @@ lspsaga.init_lsp_saga({
   server_filetype_map = {
     typescript = 'typescript',
   },
+  diagnostic_header = { '😡', '😢', '🤔', '🤓' },
+  border_style = 'double',
+  move_in_saga = { quit = 'q' },
 })
 
 nvim_lsp.tsserver.setup({
@@ -52,7 +55,6 @@ nvim_lsp.sumneko_lua.setup({
         library = vim.api.nvim_get_runtime_file('', true),
       },
       telemetry = {
-
         enable = false,
       },
     },
@@ -68,31 +70,28 @@ masonnulls.setup_handlers({
       diagnostics_format = '[eslint] #{m}\n(#{c})',
     }))
   end,
+  prettierd = function()
+    nulls.register(nulls.builtins.formatting.prettierd.with({
+      -- filetypes = {
+      --   'typescript',
+      --   'typescriptreact',
+      --   'javascript',
+      --   'javascriptreact',
+      --   'json',
+      --   'markdown',
+      --   'css',
+      --   'html',
+      --   'graphql',
+      --   'less',
+      --   'scss',
+      --   'yaml',
+      -- },
+    }))
+  end,
 })
 
 nulls.setup({
   on_attach = on_attach,
-  sources = {
-    nulls.builtins.formatting.prettierd.with({
-      filetypes = {
-        'typescript',
-        'typescriptreact',
-        'javascript',
-        'javascriptreact',
-        'json',
-        'markdown',
-        'css',
-        'html',
-        'graphql',
-        'less',
-        'scss',
-        'yaml',
-      },
-    }),
-    -- nulls.builtins.diagnostics.eslint.with({
-    --   diagnostics_format = '[eslint] #{m}\n(#{c})',
-    -- }),
-  },
 })
 
 autotag.setup({})

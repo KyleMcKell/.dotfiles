@@ -3,6 +3,7 @@ local remap = require('kylemckell.keymap')
 local nnoremap = remap.nnoremap
 local tnoremap = remap.tnoremap
 local vnoremap = remap.vnoremap
+-- local inoremap = remap.inoremap
 
 -- back to netrw
 nnoremap('<leader>ex', '<cmd>Ex<CR>')
@@ -25,9 +26,7 @@ vnoremap('<leader>p', '"+p')
 vnoremap('<leader>P', '"+P')
 
 -- terminal remaps
--- nnoremap('<leader>cmd', '<cmd>vnew<CR><cmd>:terminal<CR>i') -- open terminal in vnew
 tnoremap('<Esc>', '<C-\\><C-n>') -- remap Esc to go to normal mode in terminal
--- tnoremap('<leader><Esc>', '<C-\\><C-n><cmd>q<CR>') -- remap Esc to go to normal mode in terminal
 
 -- lsp saga
 nnoremap('<leader>ld', '<cmd>Lspsaga show_line_diagnostics<CR>')
@@ -39,14 +38,22 @@ nnoremap('<leader>ca', '<cmd>Lspsaga code_action<CR>')
 nnoremap('D', '<cmd>Lspsaga peek_definition<CR>')
 nnoremap('<leader>rn', '<cmd>Lspsaga rename<CR>')
 
--- float terminal
-nnoremap('<C-a>', '<cmd>Lspsaga open_floaterm<CR>')
-tnoremap('<C-a>', '<cmd>Lspsaga close_floaterm<CR>')
-
 -- get rid of highlight
-nnoremap('<leader>noh', '<Esc>:noh<CR>')
+nnoremap('<leader>hl', '<Esc>:noh<CR>')
 
 -- git
 nnoremap('<leader>gb', '<cmd>GitBlame<CR>')
 nnoremap('<leader>gR', '<cmd>GitRevert<CR>')
 nnoremap('<leader>gr', '<cmd>GitRevertFile<CR>')
+
+-- new line enter
+-- nnoremap('<PageDown>', 'o')
+-- inoremap('<PageDown>', '<Esc>o') -- okay so listen, I remapped fn + enter to pagedown LOL, we gaming
+-- nnoremap('<PageUp>', 'O')
+-- inoremap('<PageUp>', 'O')
+
+-- nvim tree garbage
+nnoremap('<leader>tt', '<cmd>NvimTreeToggle<CR>')
+nnoremap('<leader>to', '<cmd>NvimTreeFocus<CR>')
+nnoremap('<leader>tf', '<cmd>NvimTreeFindFile<cr>')
+nnoremap('<leader>tc', '<cmd>NvimTreeCollapse<cr>')
