@@ -21,7 +21,6 @@ lspsaga.init_lsp_saga({
   server_filetype_map = {
     typescript = 'typescript',
   },
-  -- error, warning, info, hint
   diagnostic_header = { '😡', '😢', '🤔', '🤓' },
   border_style = 'double',
   move_in_saga = { quit = 'q' },
@@ -92,3 +91,4 @@ masonnulls.setup_handlers({
 nulls.setup({
   on_attach = on_attach,
 })
+

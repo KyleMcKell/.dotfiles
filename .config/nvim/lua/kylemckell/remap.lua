@@ -3,7 +3,7 @@ local remap = require('kylemckell.keymap')
 local nnoremap = remap.nnoremap
 local tnoremap = remap.tnoremap
 local vnoremap = remap.vnoremap
-local inoremap = remap.inoremap
+-- local inoremap = remap.inoremap
 
 -- back to netrw
 nnoremap('<leader>ex', '<cmd>Ex<CR>')
@@ -46,11 +46,11 @@ nnoremap('<leader>gb', '<cmd>GitBlame<CR>')
 nnoremap('<leader>gR', '<cmd>GitRevert<CR>')
 nnoremap('<leader>gr', '<cmd>GitRevertFile<CR>')
 
--- new line enter, I remapped fn + enter to pagedown LOL, we gaming
-nnoremap('<PageDown>', 'o')
-inoremap('<PageDown>', '<Esc>o')
-nnoremap('<PageUp>', 'O')
-inoremap('<PageUp>', '<Esc>O')
+-- new line enter
+-- nnoremap('<PageDown>', 'o')
+-- inoremap('<PageDown>', '<Esc>o') -- okay so listen, I remapped fn + enter to pagedown LOL, we gaming
+-- nnoremap('<PageUp>', 'O')
+-- inoremap('<PageUp>', 'O')
 
 -- nvim tree garbage
 nnoremap('<leader>tt', '<cmd>NvimTreeToggle<CR>')
