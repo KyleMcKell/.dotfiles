@@ -4,3 +4,4 @@ vim.cmd([[set ls=0]]) -- last status
 vim.cmd([[set ch=0]]) -- command height
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
