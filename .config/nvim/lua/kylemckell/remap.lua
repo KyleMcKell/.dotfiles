@@ -46,11 +46,11 @@ nnoremap('<leader>gb', '<cmd>GitBlame<CR>')
 nnoremap('<leader>gR', '<cmd>GitRevert<CR>')
 nnoremap('<leader>gr', '<cmd>GitRevertFile<CR>')
 
--- new line enter
+-- new line enter, I remapped fn + enter to pagedown LOL, we gaming
 nnoremap('<PageDown>', 'o')
-inoremap('<PageDown>', '<Esc>o') -- okay so listen, I remapped fn + enter to pagedown LOL, we gaming
+inoremap('<PageDown>', '<Esc>o')
 nnoremap('<PageUp>', 'O')
-inoremap('<PageUp>', 'O')
+inoremap('<PageUp>', '<Esc>O')
 
 -- nvim tree garbage
 nnoremap('<leader>tt', '<cmd>NvimTreeToggle<CR>')
