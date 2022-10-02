@@ -36,13 +36,6 @@ packer.startup(function(use)
 
   -- Config here stuff
   use({
-    'kyazdani42/nvim-tree.lua',
-    config = function() require('nvim-tree').setup({ open_on_setup = false }) end,
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    tag = 'nightly',
-  })
-
-  use({
     'akinsho/toggleterm.nvim',
     config = function() require('toggleterm').setup({ open_mapping = [[<c-a>]] }) end,
     tag = '*',
@@ -77,7 +70,7 @@ packer.startup(function(use)
 
   use({
     'nvim-lualine/lualine.nvim',
-    config = function() require('lualine').setup({ options = { icons_enabled = true,}}) end,
+    config = function() require('lualine').setup({ options = { icons_enabled = true } }) end,
     event = 'BufRead',
     requires = { { 'kyazdani42/nvim-web-devicons', opt = true } },
   })
@@ -94,6 +87,14 @@ packer.startup(function(use)
     'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup({ disable_filetype = { 'TelescopePrompt', 'vim' } }) end,
     event = 'BufRead',
+  })
+
+  use({
+    'kyazdani42/nvim-tree.lua',
+    config = function() require('nvim-tree').setup({ open_on_setup = false }) end,
+    event = 'BufRead',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    tag = 'nightly',
   })
 
   use({
