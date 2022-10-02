@@ -1,9 +1,5 @@
-local installStatus, treesitterInstall = pcall(require, 'nvim-treesitter.install')
-local configsStatus, treesitterConfig = pcall(require, 'nvim-treesitter.configs')
-
-if not installStatus or not configsStatus then
-  return
-end
+local treesitterInstall = require('nvim-treesitter.install')
+local treesitterConfig = require('nvim-treesitter.configs')
 
 treesitterInstall.update({ with_sync = true })
 

@@ -24,11 +24,6 @@ packer.startup(function(use)
 
   -- things that do more than just use
   use({
-    'nvim-lualine/lualine.nvim',
-    requires = { { 'kyazdani42/nvim-web-devicons', opt = true } },
-  })
-
-  use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   })
@@ -42,7 +37,7 @@ packer.startup(function(use)
   -- Config here stuff
   use({
     'kyazdani42/nvim-tree.lua',
-    config = function() require('nvim-tree').setup() end,
+    config = function() require('nvim-tree').setup({ open_on_setup = false }) end,
     requires = { 'kyazdani42/nvim-web-devicons' },
     tag = 'nightly',
   })
@@ -54,18 +49,6 @@ packer.startup(function(use)
   })
 
   -- Lazy Loaded stuff
-  use({
-    'windwp/nvim-autopairs',
-    config = function() require('nvim-autopairs').setup({ disable_filetype = { 'TelescopePrompt', 'vim' } }) end,
-    event = 'BufRead',
-  })
-
-  use({
-    'windwp/nvim-ts-autotag',
-    config = function() require('nvim-ts-autotag').setup() end,
-    event = 'BufRead',
-  })
-
   use({
     'akinsho/bufferline.nvim',
     config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
@@ -93,10 +76,29 @@ packer.startup(function(use)
   })
 
   use({
+    'nvim-lualine/lualine.nvim',
+    config = function() require('lualine').setup({ options = { icons_enabled = true,}}) end,
+    event = 'BufRead',
+    requires = { { 'kyazdani42/nvim-web-devicons', opt = true } },
+  })
+
+  use({
     'iamcco/markdown-preview.nvim',
     event = 'BufRead',
     ft = { 'markdown' },
     run = 'cd app && npm install',
     setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
+  })
+
+  use({
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup({ disable_filetype = { 'TelescopePrompt', 'vim' } }) end,
+    event = 'BufRead',
+  })
+
+  use({
+    'windwp/nvim-ts-autotag',
+    config = function() require('nvim-ts-autotag').setup() end,
+    event = 'BufRead',
   })
 end)
