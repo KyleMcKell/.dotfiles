@@ -2,8 +2,6 @@ local nvim_lsp = require('lspconfig')
 local lspsaga = require('lspsaga')
 local nulls = require('null-ls')
 local masonnulls = require('mason-null-ls')
-local autotag = require('nvim-ts-autotag')
-local autopairs = require('nvim-autopairs')
 
 local runtime_path = vim.split(package.path, ';')
 -- local protocol = require("vim.lsp.protocol")
@@ -94,7 +92,3 @@ nulls.setup({
   on_attach = on_attach,
 })
 
-autotag.setup({})
-autopairs.setup({
-  disable_filetype = { 'TelescopePrompt', 'vim' },
-})

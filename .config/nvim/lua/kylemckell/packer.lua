@@ -1,38 +1,50 @@
-local status, packer = pcall(require, 'packer')
-
-if not status then
-  print('Packer is not installed!')
-  return
-end
+local packer = require('packer')
 
 vim.cmd([[packadd packer.nvim]])
 
 return packer.startup(function(use)
+  -- packer, lmao
   use('wbthomason/packer.nvim')
-  use('neovim/nvim-lspconfig')
-  use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-  use('jose-elias-alvarez/null-ls.nvim')
-  use({ 'nvim-lualine/lualine.nvim', requires = { { 'kyazdani42/nvim-web-devicons', opt = true } } })
-  use({ 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { { 'nvim-lua/plenary.nvim' } } })
-  use({ 'catppuccin/nvim', as = 'catppuccin' })
+
+  -- just packages
+  use('hrsh7th/cmp-buffer')
+  use('hrsh7th/cmp-nvim-lsp')
+  use('onsails/lspkind-nvim')
+  use('glepnir/lspsaga.nvim')
+  use('L3MON4D3/LuaSnip')
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
   use('jayp0521/mason-null-ls.nvim')
+  use('jose-elias-alvarez/null-ls.nvim')
   use('hrsh7th/nvim-cmp')
-  use('hrsh7th/cmp-buffer')
-  use('hrsh7th/cmp-nvim-lsp')
-  use('L3MON4D3/LuaSnip')
-  use('onsails/lspkind-nvim')
-  use('windwp/nvim-ts-autotag')
-  use('windwp/nvim-autopairs')
-  use('glepnir/lspsaga.nvim')
+  use('neovim/nvim-lspconfig')
+
+  -- color theme
+  use({ 'catppuccin/nvim', as = 'catppuccin' })
+
+  -- things that do more than just use
+  use({
+    'nvim-lualine/lualine.nvim',
+    requires = { { 'kyazdani42/nvim-web-devicons', opt = true } },
+  })
+
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  })
+
+  use({
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    tag = '0.1.0',
+  })
 
   -- Config here stuff
   use({
     'kyazdani42/nvim-tree.lua',
     config = function() require('nvim-tree').setup() end,
-    tag = 'nightly',
     requires = { 'kyazdani42/nvim-web-devicons' },
+    tag = 'nightly',
   })
 
   use({
@@ -43,36 +55,48 @@ return packer.startup(function(use)
 
   -- Lazy Loaded stuff
   use({
-    'akinsho/bufferline.nvim',
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup({ disable_filetype = { 'TelescopePrompt', 'vim' } }) end,
     event = 'BufRead',
+  })
+
+  use({
+    'windwp/nvim-ts-autotag',
+    config = function() require('nvim-ts-autotag').setup() end,
+    event = 'BufRead',
+  })
+
+  use({
+    'akinsho/bufferline.nvim',
     config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
-    tag = 'v2.*',
+    event = 'BufRead',
     requires = 'kyazdani42/nvim-web-devicons',
+    tag = 'v2.*',
   })
 
   use({
     'numToStr/Comment.nvim',
-    event = 'BufRead',
     config = function() require('Comment').setup() end,
+    event = 'BufRead',
   })
 
   use({
     'dinhhuy258/git.nvim',
-    event = 'BufRead',
     config = function() require('git').setup() end,
+    event = 'BufRead',
   })
 
   use({
     'lewis6991/gitsigns.nvim',
-    event = 'BufRead',
     config = function() require('gitsigns').setup() end,
+    event = 'BufRead',
   })
 
   use({
     'iamcco/markdown-preview.nvim',
     event = 'BufRead',
-    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
-    run = 'cd app && npm install',
     ft = { 'markdown' },
+    run = 'cd app && npm install',
+    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
   })
 end)
