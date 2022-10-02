@@ -15,7 +15,6 @@ return packer.startup(function(use)
   use({ 'nvim-lualine/lualine.nvim', requires = { { 'kyazdani42/nvim-web-devicons', opt = true } } })
   use({ 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { { 'nvim-lua/plenary.nvim' } } })
   use({ 'catppuccin/nvim', as = 'catppuccin' })
-  use('numToStr/Comment.nvim')
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
   use('jayp0521/mason-null-ls.nvim')
@@ -27,10 +26,53 @@ return packer.startup(function(use)
   use('windwp/nvim-ts-autotag')
   use('windwp/nvim-autopairs')
   use('glepnir/lspsaga.nvim')
-  use('lewis6991/gitsigns.nvim')
-  use('dinhhuy258/git.nvim')
-  use({ 'akinsho/bufferline.nvim', tag = 'v2.*', requires = 'kyazdani42/nvim-web-devicons' })
-  use({ 'akinsho/toggleterm.nvim', tag = '*' })
-  use({ 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', setup = function() vim.g.mkdp_filetypes = { 'markdown' } end, ft = { 'markdown' } })
-  use({ 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' }, tag = 'nightly' })
+
+  -- Config here stuff
+  use({
+    'kyazdani42/nvim-tree.lua',
+    config = function() require('nvim-tree').setup() end,
+    tag = 'nightly',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+  })
+
+  use({
+    'akinsho/toggleterm.nvim',
+    config = function() require('toggleterm').setup({ open_mapping = [[<c-a>]] }) end,
+    tag = '*',
+  })
+
+  -- Lazy Loaded stuff
+  use({
+    'akinsho/bufferline.nvim',
+    event = 'BufRead',
+    config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
+    tag = 'v2.*',
+    requires = 'kyazdani42/nvim-web-devicons',
+  })
+
+  use({
+    'numToStr/Comment.nvim',
+    event = 'BufRead',
+    config = function() require('Comment').setup() end,
+  })
+
+  use({
+    'dinhhuy258/git.nvim',
+    event = 'BufRead',
+    config = function() require('git').setup() end,
+  })
+
+  use({
+    'lewis6991/gitsigns.nvim',
+    event = 'BufRead',
+    config = function() require('gitsigns').setup() end,
+  })
+
+  use({
+    'iamcco/markdown-preview.nvim',
+    event = 'BufRead',
+    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
+    run = 'cd app && npm install',
+    ft = { 'markdown' },
+  })
 end)

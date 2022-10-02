@@ -1,5 +1,1 @@
-local toggleterm = require('toggleterm')
-
-toggleterm.setup({
-  open_mapping = [[<c-a>]],
-})
+-- require('toggleterm').setup({open_mapping = [[<c-a>]],})
