@@ -1,11 +1,5 @@
-local status, telescope = pcall(require, 'telescope')
+local telescope = require('telescope')
 
-if not status then return end
+pcall(telescope.load_extention, 'fzf')
 
-telescope.setup({
-  pickers = {
-    find_files = {
-      hidden = false,
-    },
-  },
-})
+telescope.setup()

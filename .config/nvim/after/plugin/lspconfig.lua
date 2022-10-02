@@ -68,27 +68,9 @@ masonnulls.setup_handlers({
       diagnostics_format = '[eslint] #{m}\n(#{c})',
     }))
   end,
-  prettierd = function()
-    nulls.register(nulls.builtins.formatting.prettierd.with({
-      -- filetypes = {
-      --   'typescript',
-      --   'typescriptreact',
-      --   'javascript',
-      --   'javascriptreact',
-      --   'json',
-      --   'markdown',
-      --   'css',
-      --   'html',
-      --   'graphql',
-      --   'less',
-      --   'scss',
-      --   'yaml',
-      -- },
-    }))
-  end,
+  prettierd = function() nulls.register(nulls.builtins.formatting.prettierd) end,
 })
 
 nulls.setup({
   on_attach = on_attach,
 })
-
