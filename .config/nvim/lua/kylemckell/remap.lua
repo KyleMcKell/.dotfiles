@@ -4,6 +4,7 @@ local nnoremap = remap.nnoremap
 local tnoremap = remap.tnoremap
 local vnoremap = remap.vnoremap
 local inoremap = remap.inoremap
+local xnoremap = remap.xnoremap
 
 -- back to netrw
 nnoremap('<leader>ex', '<cmd>Ex<CR>')
@@ -58,3 +59,9 @@ nnoremap('<leader>to', '<cmd>NvimTreeFocus<CR>')
 nnoremap('<leader>tf', '<cmd>NvimTreeFindFile<CR>')
 nnoremap('<leader>tc', '<cmd>NvimTreeCollapse<CR>')
 nnoremap('<leader>tr', '<cmd>NvimTreeRefresh<CR>')
+
+-- Visual Block movements
+xnoremap('J', ":move '>+1<CR>gv-gv")
+xnoremap('<A-j>', ":move '>+1<CR>gv-gv")
+xnoremap('K', ":move '<-2<CR>gv-gv")
+xnoremap('<A-k>', ":move '<-2<CR>gv-gv")
