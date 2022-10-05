@@ -42,13 +42,13 @@ packer.startup(function(use)
   })
 
   -- Lazy Loaded stuff
-  use({
-    'akinsho/bufferline.nvim',
-    config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
-    event = 'BufRead',
-    requires = 'kyazdani42/nvim-web-devicons',
-    tag = 'v2.*',
-  })
+  -- use({
+  --   'akinsho/bufferline.nvim',
+  --   config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
+  --   event = 'BufRead',
+  --   requires = 'kyazdani42/nvim-web-devicons',
+  --   tag = 'v2.*',
+  -- })
 
   use({
     'numToStr/Comment.nvim',

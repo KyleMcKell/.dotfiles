@@ -27,8 +27,12 @@ treesitterConfig.setup({
     'yaml',
     'json',
     'toml',
+    'fish',
   },
   autotag = {
     enable = true,
   },
 })
+
+local parserConfig = require('nvim-treesitter.parsers').get_parser_configs()
+parserConfig.tsx.filetype_to_parsername = { 'javascript', 'typescript.tsx' }
