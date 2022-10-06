@@ -2,4 +2,10 @@
 
 My dotfiles
 
-Not much here rn lol
+## Neovim
+
+It sure is Neovim config!
+
+## Zsh
+
+It sure is a oh-my-zsh config!
