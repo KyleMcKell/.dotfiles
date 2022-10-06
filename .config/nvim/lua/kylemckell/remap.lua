@@ -9,6 +9,11 @@ local xnoremap = remap.xnoremap
 -- back to netrw
 nnoremap('<leader>ex', '<cmd>Ex<CR>')
 
+-- buffers
+nnoremap('<leader>bd', '<cmd>bd<CR>') -- delete current buffer
+nnoremap('<leader>bad', '<cmd>%bd<CR>') -- delete all buffers (buffer all delete)
+nnoremap('<leader>bod', '<cmd>%bd|e#<CR>') -- delete all buffers, then open
+
 -- telescope fuzzy
 nnoremap('<leader>ff', '<cmd>Telescope find_files<CR>')
 nnoremap('<leader>fg', '<cmd>Telescope live_grep<CR>')
@@ -38,6 +43,7 @@ nnoremap('K', '<cmd>Lspsaga hover_doc<CR>')
 nnoremap('<leader>ca', '<cmd>Lspsaga code_action<CR>')
 nnoremap('D', '<cmd>Lspsaga peek_definition<CR>')
 nnoremap('<leader>rn', '<cmd>Lspsaga rename<CR>')
+nnoremap('<leader>F', '<cmd>Lspsaga lsp_finder<CR>')
 
 -- get rid of highlight
 nnoremap('<leader>hl', '<Esc>:noh<CR>')

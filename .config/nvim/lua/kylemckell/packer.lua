@@ -36,19 +36,24 @@ packer.startup(function(use)
 
   -- Config here stuff
   use({
+    'folke/lua-dev.nvim',
+    config = function() require('lua-dev').setup({}) end,
+  })
+
+  use({
     'akinsho/toggleterm.nvim',
     config = function() require('toggleterm').setup({ open_mapping = [[<c-a>]] }) end,
     tag = '*',
   })
 
   -- Lazy Loaded stuff
-  -- use({
-  --   'akinsho/bufferline.nvim',
-  --   config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
-  --   event = 'BufRead',
-  --   requires = 'kyazdani42/nvim-web-devicons',
-  --   tag = 'v2.*',
-  -- })
+  use({
+    'akinsho/bufferline.nvim',
+    config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
+    event = 'BufRead',
+    requires = 'kyazdani42/nvim-web-devicons',
+    tag = 'v2.*',
+  })
 
   use({
     'numToStr/Comment.nvim',

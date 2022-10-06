@@ -1,8 +1,9 @@
-local nvim_lsp = require('lspconfig')
 local lspsaga = require('lspsaga')
-local nulls = require('null-ls')
 local masonnulls = require('mason-null-ls')
+local nulls = require('null-ls')
+local nvim_lsp = require('lspconfig')
 
+---@diagnostic disable-next-line: missing-parameter
 local runtime_path = vim.split(package.path, ';')
 -- local protocol = require("vim.lsp.protocol")
 
