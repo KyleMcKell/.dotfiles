@@ -37,6 +37,10 @@ nvim_lsp.gopls.setup({
   on_attach = on_attach,
 })
 
+nvim_lsp.svelte.setup({
+  on_attach = on_attach,
+})
+
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 

@@ -2,7 +2,7 @@ local mason = require('mason')
 local masonlsp = require('mason-lspconfig')
 local masonnulls = require('mason-null-ls')
 
-local servers = { 'sumneko_lua', 'tsserver', 'gopls', 'pyright', 'rust_analyzer', 'tailwindcss' }
+local servers = { 'sumneko_lua', 'tsserver', 'gopls', 'pyright', 'rust_analyzer', 'tailwindcss', 'svelte' }
 local nulltools = { 'stylua', 'jq', 'eslint_d', 'prettierd' }
 
 mason.setup({

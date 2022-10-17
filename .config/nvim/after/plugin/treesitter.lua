@@ -28,6 +28,7 @@ treesitterConfig.setup({
     'json',
     'toml',
     'fish',
+    'svelte',
   },
   autotag = {
     enable = true,

@@ -18,6 +18,8 @@ packer.startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
   use('hrsh7th/nvim-cmp')
   use('neovim/nvim-lspconfig')
+  use('kyazdani42/nvim-web-devicons')
+  use('nvim-lua/plenary.nvim')
 
   -- color theme
   use({ 'catppuccin/nvim', as = 'catppuccin' })
@@ -30,7 +32,6 @@ packer.startup(function(use)
 
   use({
     'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } },
     tag = '0.1.0',
   })
 
@@ -51,7 +52,6 @@ packer.startup(function(use)
     'akinsho/bufferline.nvim',
     config = function() require('bufferline').setup({ options = { diagnostics = 'nvim_lsp' } }) end,
     event = 'BufRead',
-    requires = 'kyazdani42/nvim-web-devicons',
     tag = 'v2.*',
   })
 

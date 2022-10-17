@@ -16,6 +16,7 @@ nnoremap('<leader>bod', '<cmd>%bd|e#<CR>') -- delete all buffers, then open
 
 -- telescope fuzzy
 nnoremap('<leader>ff', '<cmd>Telescope find_files<CR>')
+nnoremap('<leader>hff', '<cmd>Telescope find_files hidden=true<CR>')
 nnoremap('<leader>fg', '<cmd>Telescope live_grep<CR>')
 nnoremap('<leader>fb', '<cmd>Telescope buffers<CR>')
 nnoremap('<leader>fh', '<cmd>Telescope help_tags<CR>')
