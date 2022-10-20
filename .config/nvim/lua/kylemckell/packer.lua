@@ -37,8 +37,8 @@ packer.startup(function(use)
 
   -- Config here stuff
   use({
-    'folke/lua-dev.nvim',
-    config = function() require('lua-dev').setup({}) end,
+    'folke/neodev.nvim',
+    config = function() require('neodev').setup({}) end,
   })
 
   use({

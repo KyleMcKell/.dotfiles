@@ -27,22 +27,17 @@ lspsaga.init_lsp_saga({
   move_in_saga = { quit = 'q' },
 })
 
-nvim_lsp.tsserver.setup({
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
+
+nvim_lsp.astro.setup({
   on_attach = on_attach,
-  filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
-  cmd = { 'typescript-language-server', '--stdio' },
+  filetypes = { 'astro' },
 })
 
 nvim_lsp.gopls.setup({
   on_attach = on_attach,
 })
-
-nvim_lsp.svelte.setup({
-  on_attach = on_attach,
-})
-
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
 
 nvim_lsp.sumneko_lua.setup({
   settings = {
@@ -62,6 +57,16 @@ nvim_lsp.sumneko_lua.setup({
       },
     },
   },
+})
+
+nvim_lsp.svelte.setup({
+  on_attach = on_attach,
+})
+
+nvim_lsp.tsserver.setup({
+  on_attach = on_attach,
+  filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+  cmd = { 'typescript-language-server', '--stdio' },
 })
 
 masonnulls.setup_handlers({

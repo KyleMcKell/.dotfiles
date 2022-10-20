@@ -14,6 +14,7 @@ treesitterConfig.setup({
   },
   ensure_installed = {
     'tsx',
+    'astro',
     'typescript',
     'css',
     'html',
