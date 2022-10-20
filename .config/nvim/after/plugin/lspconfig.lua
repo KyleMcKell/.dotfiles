@@ -32,7 +32,6 @@ table.insert(runtime_path, 'lua/?/init.lua')
 
 nvim_lsp.astro.setup({
   on_attach = on_attach,
-  filetypes = { 'astro' },
 })
 
 nvim_lsp.gopls.setup({
