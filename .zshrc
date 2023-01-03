@@ -16,7 +16,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(git nvm)
 
-NVM_AUTOLOAD=1
+zstyle ':omz:plugins:nvm' autoload yes
 
 source $ZSH/oh-my-zsh.sh
 
